@@ -13,7 +13,9 @@ I discovered that getting RL models to work is a lot more difficult than getting
 * The hyperparameters is different. There is learning rate, but no regularization.  
 * The training workflow is very different. Instead of performing a forward pass on the data followed by a backward pass as in image classification, policy-based RL involves running the forward pass hundreds to thousands of games steps in an episode (depending on the game), accumulating a stack of rewards and log-probability along the way, then using these accumulated data to perform a single backward pass to update the policy parameters.  
 * Policy-based RL is gradient ascent instead of gradient descent.  
-* There are many local optima in the policy landscape and the agent can easily get trapped in these local optima. They easily get content being "King of the Small Hill".  
+* There are many local optima in the policy landscape and the agent can easily get trapped in these local optima. They easily get content being "King of the Small Hill".
+
+Both the REINFORCE and Actor-Critic agents can only achieve parity with the game AI (running reward of -1.0 and 1.0 respectively).
 
 ## Environment
 
@@ -34,11 +36,11 @@ This Notebook trains Karpathy's numpy implementation of REINFORCE on PONG to 30K
 3. [reinforce.ipynb](./reinforce.ipynb)    
 This Notebook adapted PyTorch's ACTOR_CRITIC agent for Pong and enables it to run with GPU acceleration.
 
-4. gym/actor-critic.ipynb    
+4. [actor-critic.ipynb](./actor-critic.ipynb)    
 This Notebook adapted PyTorch's ACTOR_CRITIC agent for Pong and enables it to run with GPU acceleration.
 
-5. gym/eval_model.ipynb    
+5. eval_model.ipynb    
 This Notebook analyzes the content the model and history files, allowing users to generate images of the weight parameters and plots of scores versus training episodes.
 
-6. gym/downsample.ipynb    
+6. downsample.ipynb    
 This Notebook look at different ways of downsampling PONG's images down to 40x40 or 80x80 frames.
